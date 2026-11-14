@@ -1,0 +1,12 @@
+name: probe
+on: workflow_dispatch
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          curl -s https://repo1.maven.org/maven2/org/maplibre/gl/android-sdk/maven-metadata.xml | grep -o "<version>[^<]*" | tail -8
+          curl -s https://api.github.com/repos/onthegomap/planetiler/releases/latest | grep -E '"tag_name"|browser_download_url' | head -5
+          curl -s https://api.github.com/repos/openmaptiles/fonts/releases | grep -E '"tag_name"|browser_download_url' | head -8
+          curl -sI https://download.geofabrik.de/europe/ukraine-latest.osm.pbf | grep -i content-length
+          nproc; free -g; df -h / | tail -1
