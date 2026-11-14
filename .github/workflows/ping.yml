@@ -1,0 +1,14 @@
+name: Лічильник встановлень (одноразово)
+on: workflow_dispatch
+permissions:
+  contents: write
+jobs:
+  setup:
+    runs-on: ubuntu-latest
+    steps:
+      - env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          echo "ok" > ping.txt
+          gh release view ping --repo ${{ github.repository }} >/dev/null 2>&1 || \
+            gh release create ping ping.txt --repo ${{ github.repository }} --title "ping" --notes "Анонімний щоденний сигнал застосунку НІП (лічильник завантажень)."
