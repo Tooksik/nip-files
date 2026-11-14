@@ -13,6 +13,20 @@
     52.45
    ],
    "url": "https://github.com/Tooksik/nip-files/releases/download/maps-20261114-0703/sumy.pmtiles"
+  },
+  {
+   "id": "chernihiv",
+   "name": "Чернігівська область",
+   "size": 79736768,
+   "version": "maps-20261114-1001",
+   "date": "14.11.26",
+   "bounds": [
+    30.402,
+    50.266,
+    33.581,
+    52.46
+   ],
+   "url": "https://github.com/Tooksik/nip-files/releases/download/maps-20261114-1001/chernihiv.pmtiles"
   }
  ]
 }
