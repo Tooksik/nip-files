@@ -1,0 +1,73 @@
+name: Карти
+on:
+  workflow_dispatch:
+    inputs:
+      region:
+        description: "Область (id)"
+        default: "sumy"
+permissions:
+  contents: write
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 240
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with: { distribution: temurin, java-version: "21" }
+      - name: Межі області
+        id: reg
+        run: |
+          case "${{ inputs.region }}" in
+            sumy) echo "bounds=32.6,49.95,35.75,52.45" >> $GITHUB_OUTPUT; echo "name=Сумська область" >> $GITHUB_OUTPUT ;;
+            *) echo "Невідома область"; exit 1 ;;
+          esac
+      - name: Інструменти й дані OpenStreetMap
+        run: |
+          curl -sSL -o planetiler.jar https://github.com/onthegomap/planetiler/releases/download/v0.10.2/planetiler.jar
+          curl -sSL -o ukraine.osm.pbf https://download.geofabrik.de/europe/ukraine-latest.osm.pbf
+          ls -la
+      - name: Збірка карти
+        run: |
+          java -Xmx12g -jar planetiler.jar --osm-path=ukraine.osm.pbf --download \
+            --bounds=${{ steps.reg.outputs.bounds }} --languages=uk,en \
+            --output=${{ inputs.region }}.pmtiles --force
+          ls -la *.pmtiles
+      - name: Шрифти для підписів
+        run: |
+          curl -sSL -o noto.zip https://github.com/openmaptiles/fonts/releases/download/v2.0/noto-sans.zip
+          mkdir -p f && unzip -q noto.zip -d f
+          find f -maxdepth 2 -type d | head -20
+          mkdir -p glyphs
+          for fs in "Noto Sans Regular" "Noto Sans Bold"; do
+            src=$(find f -type d -name "$fs" | head -1)
+            mkdir -p "glyphs/$fs"
+            for r in 0-255 256-511 512-767 768-1023 1024-1279 1280-1535 8192-8447 8448-8703; do cp "$src/$r.pbf" "glyphs/$fs/" || true; done
+          done
+          (cd glyphs && zip -qr ../glyphs.zip .)
+          ls -la glyphs.zip
+      - name: Публікація
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          tag="maps-$(date +%Y%m%d-%H%M)"
+          gh release create "$tag" ${{ inputs.region }}.pmtiles glyphs.zip --title "Карта: ${{ steps.reg.outputs.name }} ($(date +%d.%m.%y))" --notes "Дані © учасники OpenStreetMap, ODbL."
+          size=$(stat -c %s ${{ inputs.region }}.pmtiles)
+          python3 - "$tag" "$size" "${{ inputs.region }}" "${{ steps.reg.outputs.name }}" "${{ steps.reg.outputs.bounds }}" <<'PY'
+          import json, sys, os, datetime
+          tag, size, rid, name, bounds = sys.argv[1:]
+          p = "maps/index.json"
+          os.makedirs("maps", exist_ok=True)
+          idx = json.load(open(p)) if os.path.exists(p) else {"regions": []}
+          idx["regions"] = [r for r in idx["regions"] if r["id"] != rid]
+          idx["regions"].append({
+              "id": rid, "name": name, "size": int(size), "version": tag,
+              "date": datetime.date.today().strftime("%d.%m.%y"),
+              "bounds": [float(x) for x in bounds.split(",")],
+              "url": f"https://github.com/Tooksik/nip-files/releases/download/{tag}/{rid}.pmtiles",
+          })
+          idx["regions"].sort(key=lambda r: r["name"])
+          json.dump(idx, open(p, "w"), ensure_ascii=False, indent=1)
+          PY
+          git config user.name "github-actions"; git config user.email "actions@github.com"
+          git add maps/index.json && git commit -m "Карта ${{ inputs.region }}: $tag" && git push
