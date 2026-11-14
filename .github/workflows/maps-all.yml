@@ -56,4 +56,4 @@ jobs:
           done < regions.tsv
           python3 .github/scripts/index.py "$tag" built.tsv
           git config user.name "github-actions"; git config user.email "actions@github.com"
-          git add maps/index.json && git commit -m "Карти областей: $tag" && git push
+          git add maps/index.json && git commit -m "Карти областей: $tag" && git pull --rebase && git push

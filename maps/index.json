@@ -1,24 +1,332 @@
 {
  "regions": [
   {
-   "id": "sumy",
-   "name": "Сумська область",
-   "size": 69598144,
-   "version": "maps-20261114-0703",
+   "id": "ivano-frankivsk",
+   "name": "Івано-Франківська область",
+   "size": 94358472,
+   "version": "maps-20261114-1007",
    "date": "14.11.26",
    "bounds": [
-    32.6,
-    49.95,
-    35.75,
-    52.45
+    23.467,
+    47.644,
+    25.733,
+    49.628
    ],
-   "url": "https://github.com/Tooksik/nip-files/releases/download/maps-20261114-0703/sumy.pmtiles"
+   "url": "https://github.com/Tooksik/nip-files/releases/download/maps-20261114-1007/ivano-frankivsk.pmtiles"
+  },
+  {
+   "id": "volyn",
+   "name": "Волинська область",
+   "size": 56854788,
+   "version": "maps-20261114-1007",
+   "date": "14.11.26",
+   "bounds": [
+    23.525,
+    50.207,
+    26.187,
+    52.049
+   ],
+   "url": "https://github.com/Tooksik/nip-files/releases/download/maps-20261114-1007/volyn.pmtiles"
+  },
+  {
+   "id": "vinnytsia",
+   "name": "Вінницька область",
+   "size": 87069678,
+   "version": "maps-20261114-1007",
+   "date": "14.11.26",
+   "bounds": [
+    27.292,
+    47.985,
+    30.101,
+    49.969
+   ],
+   "url": "https://github.com/Tooksik/nip-files/releases/download/maps-20261114-1007/vinnytsia.pmtiles"
+  },
+  {
+   "id": "dnipro",
+   "name": "Дніпропетровська область",
+   "size": 115077888,
+   "version": "maps-20261114-1007",
+   "date": "14.11.26",
+   "bounds": [
+    32.88,
+    47.377,
+    37.017,
+    49.274
+   ],
+   "url": "https://github.com/Tooksik/nip-files/releases/download/maps-20261114-1007/dnipro.pmtiles"
+  },
+  {
+   "id": "donetsk",
+   "name": "Донецька область",
+   "size": 99710377,
+   "version": "maps-20261114-1007",
+   "date": "14.11.26",
+   "bounds": [
+    36.462,
+    46.608,
+    39.171,
+    49.314
+   ],
+   "url": "https://github.com/Tooksik/nip-files/releases/download/maps-20261114-1007/donetsk.pmtiles"
+  },
+  {
+   "id": "zhytomyr",
+   "name": "Житомирська область",
+   "size": 63773932,
+   "version": "maps-20261114-1007",
+   "date": "14.11.26",
+   "bounds": [
+    27.106,
+    49.504,
+    29.815,
+    51.761
+   ],
+   "url": "https://github.com/Tooksik/nip-files/releases/download/maps-20261114-1007/zhytomyr.pmtiles"
+  },
+  {
+   "id": "zakarpattia",
+   "name": "Закарпатська область",
+   "size": 72646120,
+   "version": "maps-20261114-1007",
+   "date": "14.11.26",
+   "bounds": [
+    22.057,
+    47.817,
+    24.707,
+    49.177
+   ],
+   "url": "https://github.com/Tooksik/nip-files/releases/download/maps-20261114-1007/zakarpattia.pmtiles"
+  },
+  {
+   "id": "zaporizhzhia",
+   "name": "Запорізька область",
+   "size": 64330268,
+   "version": "maps-20261114-1007",
+   "date": "14.11.26",
+   "bounds": [
+    34.059,
+    46.066,
+    37.329,
+    48.225
+   ],
+   "url": "https://github.com/Tooksik/nip-files/releases/download/maps-20261114-1007/zaporizhzhia.pmtiles"
+  },
+  {
+   "id": "kyiv",
+   "name": "Київська область і Київ",
+   "size": 128666811,
+   "version": "maps-20261114-1007",
+   "date": "14.11.26",
+   "bounds": [
+    29.188,
+    49.099,
+    32.241,
+    51.633
+   ],
+   "url": "https://github.com/Tooksik/nip-files/releases/download/maps-20261114-1007/kyiv.pmtiles"
+  },
+  {
+   "id": "kirovohrad",
+   "name": "Кіровоградська область",
+   "size": 109737790,
+   "version": "maps-20261114-1007",
+   "date": "14.11.26",
+   "bounds": [
+    29.669,
+    47.669,
+    33.974,
+    49.325
+   ],
+   "url": "https://github.com/Tooksik/nip-files/releases/download/maps-20261114-1007/kirovohrad.pmtiles"
+  },
+  {
+   "id": "luhansk",
+   "name": "Луганська область",
+   "size": 76341720,
+   "version": "maps-20261114-1007",
+   "date": "14.11.26",
+   "bounds": [
+    37.757,
+    47.745,
+    40.308,
+    50.168
+   ],
+   "url": "https://github.com/Tooksik/nip-files/releases/download/maps-20261114-1007/luhansk.pmtiles"
+  },
+  {
+   "id": "lviv",
+   "name": "Львівська область",
+   "size": 113217026,
+   "version": "maps-20261114-1007",
+   "date": "14.11.26",
+   "bounds": [
+    22.561,
+    48.638,
+    25.507,
+    50.729
+   ],
+   "url": "https://github.com/Tooksik/nip-files/releases/download/maps-20261114-1007/lviv.pmtiles"
+  },
+  {
+   "id": "mykolaiv",
+   "name": "Миколаївська область",
+   "size": 84748545,
+   "version": "maps-20261114-1007",
+   "date": "14.11.26",
+   "bounds": [
+    30.127,
+    46.265,
+    33.264,
+    48.312
+   ],
+   "url": "https://github.com/Tooksik/nip-files/releases/download/maps-20261114-1007/mykolaiv.pmtiles"
+  },
+  {
+   "id": "odesa",
+   "name": "Одеська область",
+   "size": 76350020,
+   "version": "maps-20261114-1007",
+   "date": "14.11.26",
+   "bounds": [
+    28.134,
+    44.973,
+    31.385,
+    48.313
+   ],
+   "url": "https://github.com/Tooksik/nip-files/releases/download/maps-20261114-1007/odesa.pmtiles"
+  },
+  {
+   "id": "poltava",
+   "name": "Полтавська область",
+   "size": 98779004,
+   "version": "maps-20261114-1007",
+   "date": "14.11.26",
+   "bounds": [
+    32.004,
+    48.643,
+    35.571,
+    50.634
+   ],
+   "url": "https://github.com/Tooksik/nip-files/releases/download/maps-20261114-1007/poltava.pmtiles"
+  },
+  {
+   "id": "rivne",
+   "name": "Рівненська область",
+   "size": 72109416,
+   "version": "maps-20261114-1007",
+   "date": "14.11.26",
+   "bounds": [
+    25.004,
+    49.924,
+    27.815,
+    52.03
+   ],
+   "url": "https://github.com/Tooksik/nip-files/releases/download/maps-20261114-1007/rivne.pmtiles"
+  },
+  {
+   "id": "sumy",
+   "name": "Сумська область",
+   "size": 59607505,
+   "version": "maps-20261114-1007",
+   "date": "14.11.26",
+   "bounds": [
+    32.863,
+    50.03,
+    35.773,
+    52.447
+   ],
+   "url": "https://github.com/Tooksik/nip-files/releases/download/maps-20261114-1007/sumy.pmtiles"
+  },
+  {
+   "id": "ternopil",
+   "name": "Тернопільська область",
+   "size": 75328267,
+   "version": "maps-20261114-1007",
+   "date": "14.11.26",
+   "bounds": [
+    24.636,
+    48.427,
+    26.524,
+    50.347
+   ],
+   "url": "https://github.com/Tooksik/nip-files/releases/download/maps-20261114-1007/ternopil.pmtiles"
+  },
+  {
+   "id": "kharkiv",
+   "name": "Харківська область",
+   "size": 109890323,
+   "version": "maps-20261114-1007",
+   "date": "14.11.26",
+   "bounds": [
+    34.776,
+    48.451,
+    38.174,
+    50.539
+   ],
+   "url": "https://github.com/Tooksik/nip-files/releases/download/maps-20261114-1007/kharkiv.pmtiles"
+  },
+  {
+   "id": "kherson",
+   "name": "Херсонська область",
+   "size": 70274510,
+   "version": "maps-20261114-1007",
+   "date": "14.11.26",
+   "bounds": [
+    31.079,
+    45.677,
+    35.548,
+    47.68
+   ],
+   "url": "https://github.com/Tooksik/nip-files/releases/download/maps-20261114-1007/kherson.pmtiles"
+  },
+  {
+   "id": "khmelnytskyi",
+   "name": "Хмельницька область",
+   "size": 77131579,
+   "version": "maps-20261114-1007",
+   "date": "14.11.26",
+   "bounds": [
+    26.053,
+    48.371,
+    27.978,
+    50.675
+   ],
+   "url": "https://github.com/Tooksik/nip-files/releases/download/maps-20261114-1007/khmelnytskyi.pmtiles"
+  },
+  {
+   "id": "cherkasy",
+   "name": "Черкаська область",
+   "size": 114090957,
+   "version": "maps-20261114-1007",
+   "date": "14.11.26",
+   "bounds": [
+    29.526,
+    48.372,
+    32.976,
+    50.309
+   ],
+   "url": "https://github.com/Tooksik/nip-files/releases/download/maps-20261114-1007/cherkasy.pmtiles"
+  },
+  {
+   "id": "chernivtsi",
+   "name": "Чернівецька область",
+   "size": 48310985,
+   "version": "maps-20261114-1007",
+   "date": "14.11.26",
+   "bounds": [
+    24.828,
+    47.645,
+    27.61,
+    48.756
+   ],
+   "url": "https://github.com/Tooksik/nip-files/releases/download/maps-20261114-1007/chernivtsi.pmtiles"
   },
   {
    "id": "chernihiv",
    "name": "Чернігівська область",
    "size": 79736768,
-   "version": "maps-20261114-1001",
+   "version": "maps-20261114-1007",
    "date": "14.11.26",
    "bounds": [
     30.402,
@@ -26,7 +334,7 @@
     33.581,
     52.46
    ],
-   "url": "https://github.com/Tooksik/nip-files/releases/download/maps-20261114-1001/chernihiv.pmtiles"
+   "url": "https://github.com/Tooksik/nip-files/releases/download/maps-20261114-1007/chernihiv.pmtiles"
   }
  ]
 }
