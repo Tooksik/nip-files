@@ -1,7 +1,7 @@
 {
- "versionCode": 26,
- "versionName": "0.1.26",
- "size": 103134691,
- "notes": "Доступ до папки «НІП» тепер надається будь-кому за Gmail, без слова «керівник».",
- "url": "https://github.com/Tooksik/nip-files/releases/download/app-v0.1.26/NIP-0.1.26.apk"
+ "versionCode": 27,
+ "versionName": "0.1.27",
+ "size": 103151071,
+ "notes": "ТЕСТ: перевірка спільної папки «НІП».",
+ "url": "https://github.com/Tooksik/nip-files/releases/download/app-v0.1.27/NIP-0.1.27.apk"
 }
