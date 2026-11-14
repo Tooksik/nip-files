@@ -1,0 +1,18 @@
+{
+ "regions": [
+  {
+   "id": "sumy",
+   "name": "Сумська область",
+   "size": 69598144,
+   "version": "maps-20261114-0703",
+   "date": "14.11.26",
+   "bounds": [
+    32.6,
+    49.95,
+    35.75,
+    52.45
+   ],
+   "url": "https://github.com/Tooksik/nip-files/releases/download/maps-20261114-0703/sumy.pmtiles"
+  }
+ ]
+}
