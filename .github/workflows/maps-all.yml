@@ -1,0 +1,59 @@
+name: Карти всіх областей
+on:
+  workflow_dispatch:
+    inputs:
+      only:
+        description: "Лише ці id через кому (порожньо — усі)"
+        default: ""
+permissions:
+  contents: write
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 340
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with: { distribution: temurin, java-version: "21" }
+      - name: Інструменти
+        run: |
+          sudo apt-get -qq update && sudo apt-get -qq install -y osmium-tool > /dev/null
+          curl -sSL -o planetiler.jar https://github.com/onthegomap/planetiler/releases/download/v0.10.2/planetiler.jar
+          curl -sSL -o ukraine.osm.pbf https://download.geofabrik.de/europe/ukraine-latest.osm.pbf
+          df -h . | tail -1
+      - name: Межі областей з OpenStreetMap
+        run: |
+          osmium tags-filter ukraine.osm.pbf r/admin_level=4 -o adm.osm.pbf --overwrite
+          osmium export adm.osm.pbf -f geojson -o adm.geojson --overwrite --geometry-types=polygon
+          python3 .github/scripts/regions.py adm.geojson "${{ inputs.only }}" > regions.tsv
+          cat regions.tsv
+      - name: Шрифти
+        run: |
+          curl -sSL -o noto.zip https://github.com/openmaptiles/fonts/releases/download/v2.0/noto-sans.zip
+          mkdir -p f && unzip -q noto.zip -d f && mkdir -p glyphs
+          for fs in "Noto Sans Regular" "Noto Sans Bold"; do
+            src=$(find f -type d -name "$fs" | head -1); mkdir -p "glyphs/$fs"
+            for r in 0-255 256-511 512-767 768-1023 1024-1279 1280-1535 8192-8447 8448-8703; do cp "$src/$r.pbf" "glyphs/$fs/" || true; done
+          done
+          (cd glyphs && zip -qr ../glyphs.zip .)
+      - name: Збірка й публікація
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          tag="maps-$(date +%Y%m%d-%H%M)"
+          gh release create "$tag" glyphs.zip --title "Карти областей ($(date +%d.%m.%y))" --notes "Дані © учасники OpenStreetMap, ODbL."
+          : > built.tsv
+          while IFS=$'\t' read -r id name bounds; do
+            echo "=== $name ($bounds)"
+            if java -Xmx12g -jar planetiler.jar --osm-path=ukraine.osm.pbf --download --bounds="$bounds" \
+                 --languages=uk,en --output="$id.pmtiles" --force > "log_$id.txt" 2>&1; then
+              gh release upload "$tag" "$id.pmtiles"
+              printf '%s\t%s\t%s\t%s\n' "$id" "$name" "$bounds" "$(stat -c %s $id.pmtiles)" >> built.tsv
+              rm -f "$id.pmtiles"
+            else
+              echo "Не вдалося: $name"; tail -20 "log_$id.txt"
+            fi
+          done < regions.tsv
+          python3 .github/scripts/index.py "$tag" built.tsv
+          git config user.name "github-actions"; git config user.email "actions@github.com"
+          git add maps/index.json && git commit -m "Карти областей: $tag" && git push
