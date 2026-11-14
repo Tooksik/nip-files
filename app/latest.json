@@ -1,7 +1,7 @@
 {
- "versionCode": 27,
- "versionName": "0.1.27",
- "size": 103151071,
- "notes": "ТЕСТ: перевірка спільної папки «НІП».",
- "url": "https://github.com/Tooksik/nip-files/releases/download/app-v0.1.27/NIP-0.1.27.apk"
+ "versionCode": 28,
+ "versionName": "0.1.28",
+ "size": 103151075,
+ "notes": "ТЕСТ: вибір акаунта Google при вході.",
+ "url": "https://github.com/Tooksik/nip-files/releases/download/app-v0.1.28/NIP-0.1.28.apk"
 }
