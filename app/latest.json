@@ -1,7 +1,7 @@
 {
- "versionCode": 23,
- "versionName": "0.1.23",
- "size": 103101919,
- "notes": "Новий екран входу; розмітка фото — піктограми, фігури не обрізаються і не виходять за фото; плавне перетягування об'єктів.",
- "url": "https://github.com/Tooksik/nip-files/releases/download/app-v0.1.23/NIP-0.1.23.apk"
+ "versionCode": 24,
+ "versionName": "0.1.24",
+ "size": 103134687,
+ "notes": "Кольори карток об'єктів; «Постійне» нагадування; «Сьогодні/Завтра»; синій і свій колір у підписі та розмітці; простіше видалення об'єкта; карти всіх областей.",
+ "url": "https://github.com/Tooksik/nip-files/releases/download/app-v0.1.24/NIP-0.1.24.apk"
 }
