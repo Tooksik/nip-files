@@ -1,7 +1,7 @@
 {
- "versionCode": 25,
- "versionName": "0.1.25",
+ "versionCode": 26,
+ "versionName": "0.1.26",
  "size": 103134691,
- "notes": "Прибрано «Gmail керівника» з налаштувань Диска.",
- "url": "https://github.com/Tooksik/nip-files/releases/download/app-v0.1.25/NIP-0.1.25.apk"
+ "notes": "Доступ до папки «НІП» тепер надається будь-кому за Gmail, без слова «керівник».",
+ "url": "https://github.com/Tooksik/nip-files/releases/download/app-v0.1.26/NIP-0.1.26.apk"
 }
