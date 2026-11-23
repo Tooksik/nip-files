@@ -1,7 +1,7 @@
 {
- "versionCode": 66,
- "versionName": "0.1.66",
- "size": 89836533,
- "notes": "Швидка зйомка: камера більше не змушує тримати телефон нерухомо (як у штатній камері). Роздільність і якість JPEG без змін.\nЗі видошукача прибрано смужку мініатюр; останнє фото — мініатюра ліворуч внизу.",
- "url": "https://github.com/Tooksik/nip-files/releases/download/app-v0.1.66/NIP-0.1.66.apk"
+ "versionCode": 67,
+ "versionName": "0.1.67",
+ "size": 89836529,
+ "notes": "Камера: обмежена довга витримка (кадр менше розмазує рух руки). У перегляді фото тепер видно витримку й ISO, наприклад «1/30 с · ISO 400».",
+ "url": "https://github.com/Tooksik/nip-files/releases/download/app-v0.1.67/NIP-0.1.67.apk"
 }
