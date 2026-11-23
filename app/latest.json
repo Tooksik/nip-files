@@ -1,7 +1,7 @@
 {
- "versionCode": 64,
- "versionName": "0.1.64",
- "size": 89836529,
- "notes": "На час тестування дозволені скріншоти й запис екрана.\nЯкість фото: повний розмір кадру камери, JPEG 100 %.",
- "url": "https://github.com/Tooksik/nip-files/releases/download/app-v0.1.64/NIP-0.1.64.apk"
+ "versionCode": 65,
+ "versionName": "0.1.65",
+ "size": 89836533,
+ "notes": "У переглядачі фото тепер видно розмір кадру (пікселі, Мп) і файлу — для перевірки якості.\nНазва файлу в переглядачі в один рядок.",
+ "url": "https://github.com/Tooksik/nip-files/releases/download/app-v0.1.65/NIP-0.1.65.apk"
 }
