@@ -1,7 +1,7 @@
 {
- "versionCode": 79,
- "versionName": "0.1.79",
- "size": 90068105,
+ "versionCode": 80,
+ "versionName": "0.1.80",
+ "size": 90084489,
  "notes": "Перегляд фото і інші повноекранні вікна тепер розтягуються на весь екран у горизонталі; розмір, витримка й ISO — окремим рядком. Камера в альбомній: назва об'єкта й ✕ плашкою поверх кадру; кнопки термометра й спалаху контрастніші на світлому фоні.",
- "url": "https://github.com/Tooksik/nip-files/releases/download/app-v0.1.79/NIP-0.1.79.apk"
+ "url": "https://github.com/Tooksik/nip-files/releases/download/app-v0.1.80/NIP-0.1.80.apk"
 }
